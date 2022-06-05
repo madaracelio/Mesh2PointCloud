@@ -72,9 +72,9 @@ def obj2pcd(input_file_path, output_file_path):
 
 parser = argparse.ArgumentParser(description='Convert a mesh object to point cloud.')
 
-parser.add_argument('--input', type=str,
+parser.add_argument('--i', type=str,
                     help='input path to the object file.')
-parser.add_argument('--output', type=str,
+parser.add_argument('--o', type=str,
                     help='outpout path to the converted file.')
 
 parser.add_argument('--conv_type',
@@ -89,10 +89,8 @@ args = parser.parse_args()
 """
     Main function to run conversion
 """
-# print(args.input, args.output)
-# exit()
-# if __name__ == '__main__':
+
 if args.conv_type == "obj_xyz":
-    obj2xyz(args.input, args.output)
+    obj2xyz(args.i, args.o)
 if args.conv_type == "obj_pcd":
     obj2xyz(args.input, args.output)
